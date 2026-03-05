@@ -22,8 +22,8 @@ def process_video_interactive():
     # Optional settings
     print("\n--- Optional Settings ---")
     logo_position = (
-        input("Logo position (top-left/top-right/bottom-left/bottom-right) [top-right]: ").strip()
-        or "top-right"
+        input("Logo position (top-left/top-right/bottom-left/bottom-right) [top-left]: ").strip()
+        or "top-left"
     )
     logo_scale = float(
         input("Logo scale (0.0-1.0, relative to video width) [0.2]: ").strip() or "0.2"
@@ -72,7 +72,7 @@ def process_video_programmatic(
     subtitles_path: str,
     logo_path: str,
     output_path: str | None = None,
-    logo_position: str = "top-right",
+    logo_position: str = "top-left",
     logo_scale: float = 0.2,
 ):
     """

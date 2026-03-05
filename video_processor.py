@@ -49,7 +49,7 @@ class VideoProcessor:
     def add_logo(
         self,
         logo_path: str,
-        position: str = "top-right",
+        position: str = "top-left",
         scale: float = 0.2,
     ) -> "VideoProcessor":
         """
@@ -218,7 +218,8 @@ class VideoProcessor:
         horiz, vert = positions[position]
 
         # For now, return string positions (will be resolved by moviepy)
-        x = 10 if horiz == "left" else -10
-        y = 10 if vert == "top" else -10
+        margin = 20
+        x = margin if horiz == "left" else -margin
+        y = margin if vert == "top" else -margin
 
         return (x, y)
