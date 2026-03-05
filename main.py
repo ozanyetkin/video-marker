@@ -22,14 +22,18 @@ def process_video_interactive():
     # Optional settings
     print("\n--- Optional Settings ---")
     logo_position = (
-        input("Logo position (top-left/top-right/bottom-left/bottom-right) [top-left]: ").strip()
+        input(
+            "Logo position (top-left/top-right/bottom-left/bottom-right) [top-left]: "
+        ).strip()
         or "top-left"
     )
     logo_scale = float(
         input("Logo scale (0.0-1.0, relative to video width) [0.2]: ").strip() or "0.2"
     )
 
-    subtitle_position = input("Subtitle position (top/bottom) [bottom]: ").strip() or "bottom"
+    subtitle_position = (
+        input("Subtitle position (top/bottom) [bottom]: ").strip() or "bottom"
+    )
     fontsize = int(input("Subtitle font size [20]: ").strip() or "20")
 
     print("\n" + "=" * 60)

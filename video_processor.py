@@ -6,7 +6,7 @@ from typing import Optional, Tuple
 from PIL import Image
 
 # Compatibility fix for Pillow 11.0+ with moviepy
-if not hasattr(Image, 'ANTIALIAS'):
+if not hasattr(Image, "ANTIALIAS"):
     Image.ANTIALIAS = Image.Resampling.LANCZOS  # type: ignore
 
 from moviepy.editor import (
@@ -14,7 +14,6 @@ from moviepy.editor import (
     ImageClip,
     TextClip,
     CompositeVideoClip,
-    concatenate_videoclips,
 )
 
 
@@ -198,9 +197,7 @@ class VideoProcessor:
         return td.hours * 3600 + td.minutes * 60 + td.seconds + td.milliseconds / 1000
 
     @staticmethod
-    def _calculate_position(
-        position: str, clip
-    ) -> Tuple[int, int]:
+    def _calculate_position(position: str, clip) -> Tuple[int, int]:
         """Calculate x, y position based on position string."""
         # This will be set relative to video later
         positions = {
